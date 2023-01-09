@@ -1,0 +1,158 @@
+[general]
+network_check_url=http://www.baidu.com
+server_check_url=http://www.gstatic.com/generate_204
+server_check_timeout=2500
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/GeoLocationChecker/QuantumultX/IP-API.js
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina.com
+resource_parser_url=https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/resource-parser.js
+excluded_routes=239.255.255.250/32, 24.105.30.129/32, 185.60.112.157/32, 185.60.112.158/32, 182.162.132.1/32
+#免流端口
+udp_whitelist=80,443
+#游戏端口
+#udp_whitelist=80,443,8011-19301,19303-55761
+#端口全开
+#udp_whitelist=1-442,442-65535
+#屏蔽udp
+#fallback_udp_policy=reject
+
+[dns]
+no-system
+no-ipv6
+server=114.114.114.114
+server=202.141.176.93 
+server=202.141.178.13
+server=117.50.10.10
+server=223.5.5.5
+server=119.29.29.29:53
+server=119.28.28.28
+
+server=/*.taobao.com/223.5.5.5
+server=/*.tmall.com/223.5.5.5
+server=/*.alipay.com/223.5.5.5
+server=/*.alicdn.com/223.5.5.5
+server=/*.aliyun.com/223.5.5.5
+server=/*.jd.com/119.28.28.28
+server=/*.qq.com/119.28.28.28
+server=/*.tencent.com/119.28.28.28
+server=/*.weixin.com/119.28.28.28
+server=/*.bilibili.com/119.29.29.29
+server=/hdslb.com/119.29.29.29
+server=/*.163.com/119.29.29.29
+server=/*.126.com/119.29.29.29
+server=/*.126.net/119.29.29.29
+server=/*.127.net/119.29.29.29
+server=/*.netease.com/119.29.29.29
+server=/*.mi.com/119.29.29.29
+server=/*.xiaomi.com/119.29.29.29
+address=/mtalk.google.com/108.177.125.188
+;doh-server=https://dns.google/dns-query
+;doh-server=https://dns.alidns.com/dns-query
+;doh-server=https://223.6.6.6/dns-query, excluded_ssids=SSID1
+;如指定 doh 服务，则👆上面的一般 dns 解析均失效。支持 excluded_ssids 选项，在特定网络下禁用该 doh
+
+[policy]
+ssid=国内分流, 国内免流, direct, img-url=https://raw.githubusercontent.com/Orz-3/face/master/CN.png
+ssid=国外分流, 国外免流, Wi-Fi国外, img-url=https://raw.githubusercontent.com/Orz-3/face/master/UN.png
+static=国内免流, resource-tag-regex=果酱云|国际, server-tag-regex=(?=.*(CN|电信|联通|国内|免流|👾))^((?!(港|以下|HK|(?i)Hong|台|TW|(?i)Taiwan|日|JP|(?i)Japan|美|US|(?i)States|American)).)*$, img-url=https://raw.githubusercontent.com/Orz-3/face/master/CN.png
+static=国外免流, proxy, 香港节点, 日本节点, 台湾节点, img-url=https://raw.githubusercontent.com/Orz-3/face/master/UN.png
+ssid=香港节点, 香港免, 香港非免, img-url=https://raw.githubusercontent.com/Orz-3/face/master/HK.png
+ssid=台湾节点, 台湾免, 台湾非免, img-url=https://raw.githubusercontent.com/Orz-3/face/master/TW.png
+ssid=日本节点, 日本免, 日本非免, img-url=https://raw.githubusercontent.com/Orz-3/face/master/JP.png
+url-latency-benchmark=香港免, resource-tag-regex=果酱|国际, server-tag-regex=港|HK|hk, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/HK.png
+url-latency-benchmark=台湾免, resource-tag-regex=^果酱|国际, server-tag-regex=台|TW, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/TW.png
+url-latency-benchmark=日本免, resource-tag-regex=^果酱|国际, server-tag-regex=日|JP|jp, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/JP.png
+url-latency-benchmark=香港非免, resource-tag-regex=^(?!果酱|国际), server-tag-regex=(?=.*港|HK|hk)^(?!土耳其), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/HK.png
+url-latency-benchmark=台湾非免, resource-tag-regex=^(?!果酱|国际), server-tag-regex=台|TW, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/TW.png
+url-latency-benchmark=日本非免, resource-tag-regex=^(?!果酱|国际), server-tag-regex=日|JP|jp, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/JP.png
+static=哔哩哔哩, 国内分流, 香港节点, 台湾节点, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/niconico.png
+static=苹果服务, 国内分流, 国外分流, img-url=https://raw.githubusercontent.com/Orz-3/face/master/Apple.png
+url-latency-benchmark=Wi-Fi国外, resource-tag-regex=^((?!(果酱)).)*$, server-tag-regex=^((?!(CN|国内|回国|线路|地区|中东|官网|过期|订阅)).)*$, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/face/master/Global.png
+static=广告拦截, reject, 国内分流, img-url=https://raw.githubusercontent.com/Orz-3/face/master/Music.png
+static=SPEEDTEST, 国内分流, 国外分流, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Auto_Speed.png
+static=黑白名单, proxy, 国内分流, 国外分流, img-url=https://raw.githubusercontent.com/Orz-3/face/master/Final.png
+
+[server_remote]
+
+
+[filter_remote]
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list, tag=规则修正, force-policy=国内分流, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list, tag=AdBlock (广告拦截), force-policy=广告拦截, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/hlxvvv/Quantumult-X/main/rule/BanAD.list, tag=拦截广告, force-policy=广告拦截, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list, tag=隐私保护, force-policy=reject, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list, tag=运营劫持, force-policy=reject, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/mieqq/mieqq/master/In-AppTracker.txt, tag=应用追踪, force-policy=reject, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Bilibili.list, tag=哔哩哔哩, force-policy=哔哩哔哩, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaMax/ChinaMax.list, tag=ChinaMax, force-policy=国内分流, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/StreamingCN.list, tag=CNMedia (国内流媒体), force-policy=国内分流, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list, tag=国际媒体, force-policy=国外分流, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list, tag=全球加速, force-policy=国外分流, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list, tag=苹果服务, force-policy=苹果服务, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China.list, tag=国内网站, force-policy=国内分流, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Speedtest/Speedtest.list, tag=Speedtest（测速平台）, force-policy=SPEEDTEST, update-interval=86400, opt-parser=true, enabled=true
+
+
+
+
+[rewrite_remote]
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/TestFlightDownload.conf, tag=TesFlight解除地区限制, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Coldvvater/Mononoke/master/QuantumultX/Rewrite/Adblock/YouTubeAds.qxrewrite, tag=油管去广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf, tag=QX去开屏广告计划, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/dev/master/ForOwnUse.conf, tag=墨鱼解锁, update-interval=172800, opt-parser=true, enabled=true
+
+
+;Youtube premium 会员请勿开启此条
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.tf.conf, tag=boxjs, update-interval=86400, opt-parser=true, enabled=true
+
+
+
+[server_local]
+
+
+
+[filter_local]
+ip-cidr, 10.0.0.0/8, 国内分流
+ip-cidr, 127.0.0.0/8, 国内分流
+ip-cidr, 172.16.0.0/12, 国内分流
+ip-cidr, 192.168.0.0/16, 国内分流
+ip-cidr, 224.0.0.0/24, 国内分流
+ip-cidr, 203.107.1.1/24, reject
+geoip, cn, 国内分流
+;geoip, cn, direct, force-cellular
+final, 黑白名单
+# 绕过企业证书过期
+host, ocsp.apple.com, reject
+
+[rewrite_local]
+# ====>> bilibili自动换区
+^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\? url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+;可选, 适用于搜索指定地区的番剧
+^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)& url script-request-header https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+# =====>>去微信公众号广告 (By Choler)
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+
+# ====>>抖音去广告去水印 (By Choler)
+#URL Rewrite
+^https?+:\/\/[\w-]++\.amemv\.com\/aweme\/v\d\/feed\/ url request-header ^GET \/aweme\/v\d\/feed\/(.+)(\r\n)Host:.+ request-header GET /aweme/v1/feed/$1$2Host: aweme.snssdk.com
+^https?+:\/\/[\w-]++\.amemv\.com\/aweme\/v\d\/aweme\/post\/ url request-header ^GET \/aweme\/v\d\/aweme\/post\/(.+)(\r\n)Host:.+ request-header GET /aweme/v1/aweme/post/$1$2Host: aweme.snssdk.com
+^https?+:\/\/[\w-]++\.amemv\.com\/aweme\/v\d\/follow\/feed\/ url request-header ^GET \/aweme\/v\d\/follow\/feed\/(.+)(\r\n)Host:.+ request-header GET /aweme/v1/follow/feed/$1$2Host: aweme.snssdk.com
+^https?+:\/\/[\w-]++\.amemv\.com\/aweme\/v\d\/nearby\/feed\/ url request-header ^GET \/aweme\/v\d\/nearby\/feed\/(.+)(\r\n)Host:.+ request-header GET /aweme/v1/nearby/feed/$1$2Host: aweme.snssdk.com
+
+# ====>>微信屏蔽链接跳转
+^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi url script-response-body https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
+
+[task_local]
+# 联通余量查询
+*/30 * * * * https://raw.githubusercontent.com/xream/scripts/main/surge/modules/10010v3/10010.js, tag=联通余量, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Unicom.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/traffic-check.js, tag=策略流量查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Download.png, enabled=true
+
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP 查询, img-url=location.fill.viewfinder.system, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体-解锁查询, img-url=checkmark.seal.system, enabled=true
+
+[http_backend]
+
+https://raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, tag=BoxJS, path=^/, enabled=true
+
+[mitm]
+hostname= rdcseason.m.jd.com, *.googlevideo.com, 10010.json, ap?.bili*i.com, ap?.bili*i.net
+passphrase = 
+p12 =
